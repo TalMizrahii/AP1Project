@@ -33,8 +33,12 @@ bool isNumber(string s) {
         }
         // Checking if the user input a valid floating point number.
         if (s[i] == '.') {
+            // Checking if not accessing out of scoping our array.
+            if (i == s.length() - 1) {
+                return false;
+            }
             // If we have '.' we must get a number in the next char, otherwise not in format.
-            if (isdigit(s[i + 1]) == false) {
+            if (isdigit(s[i + 1]) == false || isdigit(s[i - 1]) == false) {
                 return false;
             }
             continue;
