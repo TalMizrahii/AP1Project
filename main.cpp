@@ -12,14 +12,15 @@ using namespace std;
  * @return boolean, True if the the string in the right format False otherwise.
  */
 bool isNumber(string s) {
-    // Check if the first or last char in the input is ' '.
-    if (isdigit(s[0]) == false || isdigit(s[s.length() - 1]) == false) {
+    int i = 0;
+    // Check if the first or last char in the input is ' ' and if the first char is '-'.
+    if ((isdigit(s[i]) == false && s[i] != '-') || isdigit(s[s.length() - 1]) == false) {
         return false;
     }
     // Check each char of the user input.
-    for (int i = 0; i < s.length(); i++) {
+    for (i = 1; i < s.length(); i++) {
         // Checking if the user input has 2 spaces neighbors.
-        if (i > 0 && (s[i] == ' ' && s[i - 1] == ' ')) {
+        if ((s[i] == ' ' && s[i - 1] == ' ')) {
             return false;
         }
         // Checking if there is a space , if we have only 1 space, the format is still correct.
@@ -34,6 +35,14 @@ bool isNumber(string s) {
             }
             // If we have '.' we must get a number in the next char, otherwise not in format.
             if (isdigit(s[i + 1]) == false || isdigit(s[i - 1]) == false) {
+                return false;
+            }
+            continue;
+        }
+        // Checking if the chars are in valid negative format
+        if (s[i] == '-') {
+            // If we have '-' we must get a space in the prev char, otherwise not in format.
+            if (i == s.length() - 1 || (s[i] == '-' && s[i - 1] != ' ')) {
                 return false;
             }
             continue;

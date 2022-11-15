@@ -122,5 +122,3 @@ void Distances::printAll(const vector<double> &d1, const vector<double> &d2) {
  * A destructor for this class.
  */
 Distances::~Distances() = default;
-
-
