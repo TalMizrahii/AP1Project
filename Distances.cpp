@@ -4,7 +4,6 @@
 
 #include "Distances.h"
 
-
 /**
  * A constructor for the class.
  */
@@ -81,7 +80,7 @@ double Distances::canberraDistance(vector<double> v1, vector<double> v2) {
     // Iterating over the indexes in each vector.
     for (int i = 0; i < v1.size(); i++) {
         // Avoiding division by 0.
-        if(v1[i] == 0 && v2[i] == 0){
+        if (v1[i] == 0 && v2[i] == 0) {
             continue;
         }
         // Calculating the subtraction between them in absolute value, dividing by each index in absolut value,
@@ -92,21 +91,43 @@ double Distances::canberraDistance(vector<double> v1, vector<double> v2) {
     return result;
 }
 
-
+/**
+ * Calculating the Minkowski distance between two vectors.
+ * @param v1 the first vector.
+ * @param v2 the second vector.
+ * @return the Minkowski distance between the two vectors.
+ */
 double Distances::minkowskiDistance(vector<double> v1, vector<double> v2) {
     // Setting the result to 0.
     double result = 0;
     // The constant value of the exponent P in the Minkowski algorithm.
-    const int P = 2;
+    double P = 2.0;
     // Iterating over the indexes in each vector.
     for (int i = 0; i < v1.size(); i++) {
-        // Calculating the subtraction between them in absolute value and adding to result.
+        // Calculating the subtraction between them in absolute value, raising to the power of 2 and adding to result.
         result += pow(fabs(v1[i] - v2[i]), P);
     }
-    // Returning the result.
-    return pow(result, 1/P);
+    // Returning the result to the power of p^-1.
+    return pow(result, 1.0 / P);
+}
+/**
+ * Printing all calculations between two vectors made by this class.
+ * @param v1 the first vector.
+ * @param v2 the second vector.
+ */
+void Distances::printAll(vector<double> d1, vector<double> d2) {
+    printf("%.08lf\n", euclideanDistance(d1, d2));
+    printf("%.01lf\n", taxicabDistance(d1, d2));
+    printf("%.01lf\n", chebyshevDistance(d1, d2));
+    printf("%.01lf\n", canberraDistance(d1, d2));
+    printf("%.08lf\n", minkowskiDistance(d1, d2));
 }
 
+/**
+ * A destructor for this class.
+ */
 Distances::~Distances() {
 
 }
+
+

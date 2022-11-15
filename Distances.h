@@ -7,6 +7,8 @@
 
 #include <vector>
 #include <cmath>
+#include <stdio.h>
+
 
 using namespace std;
 
@@ -27,6 +29,8 @@ public:
     double canberraDistance(vector<double> v1, vector<double> v2);
     // Calculates the minkowski distance.
     double minkowskiDistance(vector<double> v1, vector<double> v2);
+
+    void printAll(vector<double> v1, vector<double> v2);
 
 
 };
