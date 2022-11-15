@@ -2,7 +2,6 @@
 // Created by yuval on 11/15/22.
 //
 
-#include<stdio.h>
 #include <vector>
 #include <string>
 #include <iostream>
@@ -49,14 +48,6 @@ bool isNumber(string s) {
         }
     }
     return true;
-}
-
-//DELETE
-void print(std::vector<double> const &vector) {
-    for (int i = 0; i < vector.size(); i++) {
-        std::cout << vector.at(i) << ' ';
-    }
-    cout << "" << endl;
 }
 
 

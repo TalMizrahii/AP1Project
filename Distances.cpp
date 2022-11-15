@@ -7,9 +7,7 @@
 /**
  * A constructor for the class.
  */
-Distances::Distances() {
-
-}
+Distances::Distances() = default;
 
 /**
  * Calculating the Euclidean distance between two vectors.
@@ -126,8 +124,6 @@ void Distances::printAll(vector<double> d1, vector<double> d2) {
 /**
  * A destructor for this class.
  */
-Distances::~Distances() {
-
-}
+Distances::~Distances() = default;
 
 
