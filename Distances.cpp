@@ -94,7 +94,17 @@ double Distances::canberraDistance(vector<double> v1, vector<double> v2) {
 
 
 double Distances::minkowskiDistance(vector<double> v1, vector<double> v2) {
-    return 0;
+    // Setting the result to 0.
+    double result = 0;
+    // The constant value of the exponent P in the Minkowski algorithm.
+    const int P = 2;
+    // Iterating over the indexes in each vector.
+    for (int i = 0; i < v1.size(); i++) {
+        // Calculating the subtraction between them in absolute value and adding to result.
+        result += pow(fabs(v1[i] - v2[i]), P);
+    }
+    // Returning the result.
+    return pow(result, 1/P);
 }
 
 Distances::~Distances() {
