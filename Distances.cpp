@@ -1,7 +1,3 @@
-//
-// Created by tal on 11/15/22.
-//
-
 #include "Distances.h"
 
 /**
@@ -108,12 +104,13 @@ double Distances::minkowskiDistance(vector<double> v1, vector<double> v2) {
     // Returning the result to the power of p^-1.
     return pow(result, 1.0 / P);
 }
+
 /**
  * Printing all calculations between two vectors made by this class.
  * @param v1 the first vector.
  * @param v2 the second vector.
  */
-void Distances::printAll(vector<double> d1, vector<double> d2) {
+void Distances::printAll(const vector<double> &d1, const vector<double> &d2) {
     printf("%.08lf\n", euclideanDistance(d1, d2));
     printf("%.01lf\n", taxicabDistance(d1, d2));
     printf("%.01lf\n", chebyshevDistance(d1, d2));

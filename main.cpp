@@ -1,8 +1,3 @@
-//
-// Created by yuval on 11/15/22.
-//
-
-#include<stdio.h>
 #include <vector>
 #include <string>
 #include <iostream>
@@ -17,12 +12,12 @@ using namespace std;
  * @return boolean, True if the the string in the right format False otherwise.
  */
 bool isNumber(string s) {
+    // Check if the first or last char in the input is ' '.
+    if (isdigit(s[0]) == false || isdigit(s[s.length() - 1]) == false) {
+        return false;
+    }
     // Check each char of the user input.
     for (int i = 0; i < s.length(); i++) {
-        // Check if the first or last char in the input is ' '.
-        if (isdigit(s[0]) == false && isdigit(s[s.length() - 1]) == false) {
-            return false;
-        }
         // Checking if the user input has 2 spaces neighbors.
         if (i > 0 && (s[i] == ' ' && s[i - 1] == ' ')) {
             return false;
@@ -52,12 +47,11 @@ bool isNumber(string s) {
 }
 
 
-
 /**
- *
+ * Creating a vector from user's input and checking if its valid.
  * @return Return a valid vector by the specified format of the task.
  */
-vector<double> insert_To_Vector1() {
+vector<double> insert_To_Vector() {
     string input;
     double number;
     vector<double> vector;
@@ -68,31 +62,26 @@ vector<double> insert_To_Vector1() {
         cout << "Illegal format" << endl;
         exit(0);
     }
-    // Making a vector from the user input string.
+    // Creating a vector from the user input string.
     istringstream vectorStream(input);
     while (vectorStream >> number) {
         vector.push_back(number);
     }
     return vector;
+}
 
-
-};
 /**
  * The function check if the vectors we created have the same size.
- *
  * @param v1 the vector we created from the user input.
  * @param v2 the vector we created from the user input.
  */
-void size_Comparison(vector<double> v1, vector<double> v2){
+void size_Comparison(const vector<double> &v1, const vector<double> &v2) {
     // Checking if the vectors have the same size.
     if (v1.size() != v2.size()) {
-        cout << "The vectors is not the same size!" << endl;
+        cout << "The vectors are not equally sized." << endl;
         exit(0);
     }
 }
-
-
-
 
 
 /**
@@ -101,13 +90,14 @@ void size_Comparison(vector<double> v1, vector<double> v2){
  * @return return 0 if the program run without issues.
  */
 int main() {
-    vector<double> vector1;
-    vector<double> vector2;
-    // Making two vectors from the user's inputs.
-    vector1 = insert_To_Vector1();
-    vector2 = insert_To_Vector1();
+    // Creating two vectors from the user's inputs.
+    vector<double> vector1 = insert_To_Vector();
+    vector<double> vector2 = insert_To_Vector();
     // Calling a function that check if the vectors have the same size.
-    size_Comparison(vector1,vector2);
-
+    size_Comparison(vector1, vector2);
+    // Creating a Distance instance.
+    Distances D;
+    // Printing all distances calculations.
+    D.printAll(vector1, vector2);
     return 0;
 }
