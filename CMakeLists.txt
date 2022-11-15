@@ -4,4 +4,6 @@ project(AP1Project)
 set(CMAKE_CXX_STANDARD 14)
 
 add_executable(AP1Project
+        Distances.h
+        Distances.cpp
         main.cpp)

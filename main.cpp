@@ -20,7 +20,7 @@ bool isNumber(string s) {
     // Check each char of the user input.
     for (int i = 0; i < s.length(); i++) {
         // Check if the first or last char in the input is ' '.
-        if (isdigit(s[0]) == false && isdigit(s[s.length() - 1]) == false) {
+        if ((isdigit(s[0]) == false) || (isdigit(s[s.length() - 1]) == false)) {
             return false;
         }
         // Checking if the user input has 2 spaces neighbors.
@@ -81,31 +81,26 @@ vector<double> insert_To_Vector1() {
         vector.push_back(number);
     }
     return vector;
-
-
-};
+}
 
 /**
  *
  * @return return 0 if the program run without issues.
  */
 int main() {
-    vector<double> vector1;
-    vector<double> vector2;
-    // Making two vectors from the user's inputs.
-    vector1 = insert_To_Vector1();
-    vector2 = insert_To_Vector1();
-    //DELETE
-    print(vector1);
-    print(vector2);
+    // Creating two vectors from the user's inputs.
+    vector<double> vector1= insert_To_Vector1();
+    vector<double> vector2 = insert_To_Vector1();
+
     // Checking if the vectors have the same size.
     if (vector1.size() != vector2.size()) {
         cout << "The vectors is not the same size!" << endl;
         return 0;
     }
-    //DELETE
-    print(vector1);
-    print(vector2);
+
+    Distances D;
+    D.printAll(vector1, vector2);
+
 
     return 0;
 }
