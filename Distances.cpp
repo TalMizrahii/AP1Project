@@ -12,6 +12,7 @@ Distances::Distances() = default;
  * @return the Euclidean distance between the two vectors.
  */
 double Distances::euclideanDistance(vector<double> v1, vector<double> v2) {
+    // Minkowski Distance with p = 2 is exactly the value of Euclidean distance.
     return minkowskiDistance(v1, v2, 2);
 }
 
@@ -22,6 +23,7 @@ double Distances::euclideanDistance(vector<double> v1, vector<double> v2) {
  * @return the Taxicab Geometry distance between the two vectors.
  */
 double Distances::taxicabDistance(vector<double> v1, vector<double> v2) {
+    // Minkowski Distance with p = 1 is exactly the value of Taxicab distance.
     return minkowskiDistance(v1, v2, 1);
 }
 
@@ -95,14 +97,11 @@ double Distances::minkowskiDistance(vector<double> v1, vector<double> v2, double
  * @param v2 the second vector.
  */
 void Distances::printAll(const vector<double> &d1, const vector<double> &d2) {
-    using namespace std;
-    cout << euclideanDistance(d1, d2) << endl;
-    cout << taxicabDistance(d1, d2) << endl;
     printf("%f\n", euclideanDistance(d1, d2));
     printf("%lf\n", taxicabDistance(d1, d2));
-    printf("%.01lf\n", chebyshevDistance(d1, d2));
-    printf("%.01lf\n", canberraDistance(d1, d2));
-    printf("%.08lf\n", minkowskiDistance(d1, d2, 2));
+    printf("%lf\n", chebyshevDistance(d1, d2));
+    printf("%lf\n", canberraDistance(d1, d2));
+    printf("%lf\n", minkowskiDistance(d1, d2, 2));
 }
 
 /**
