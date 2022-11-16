@@ -4,6 +4,7 @@
 #include <vector>
 #include <cmath>
 #include <cstdio>
+#include <iostream>
 
 
 /**
@@ -33,7 +34,7 @@ public:
     double canberraDistance(vector<double> v1, vector<double> v2);
 
     // Calculates the minkowski distance.
-    double minkowskiDistance(vector<double> v1, vector<double> v2);
+    double minkowskiDistance(vector<double> v1, vector<double> v2, double p);
 
     void printAll(const vector<double> &v1, const vector<double> &v2);
 

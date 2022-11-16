@@ -12,14 +12,7 @@ Distances::Distances() = default;
  * @return the Euclidean distance between the two vectors.
  */
 double Distances::euclideanDistance(vector<double> v1, vector<double> v2) {
-    // Setting the result to 0.
-    double result = 0;
-    // Iterating over the indexes in each vector, calculating the subtraction between them and adding to result.
-    for (int i = 0; i < v1.size(); i++) {
-        result += pow(v1[i] - v2[i], 2);
-    }
-    // Returning the square root of the result.
-    return sqrt(result);
+    return minkowskiDistance(v1, v2, 2);
 }
 
 /**
@@ -29,15 +22,7 @@ double Distances::euclideanDistance(vector<double> v1, vector<double> v2) {
  * @return the Taxicab Geometry distance between the two vectors.
  */
 double Distances::taxicabDistance(vector<double> v1, vector<double> v2) {
-    // Setting the result to 0.
-    double result = 0;
-    // Iterating over the indexes in each vector.
-    for (int i = 0; i < v1.size(); i++) {
-        // Calculating the subtraction between them in absolute value and adding to result.
-        result += fabs(v1[i] - v2[i]);
-    }
-    // Returning the result.
-    return result;
+    return minkowskiDistance(v1, v2, 1);
 }
 
 /**
@@ -89,20 +74,19 @@ double Distances::canberraDistance(vector<double> v1, vector<double> v2) {
  * Calculating the Minkowski distance between two vectors.
  * @param v1 the first vector.
  * @param v2 the second vector.
+ * @param p the constant value in the algorithm.
  * @return the Minkowski distance between the two vectors.
  */
-double Distances::minkowskiDistance(vector<double> v1, vector<double> v2) {
+double Distances::minkowskiDistance(vector<double> v1, vector<double> v2, double p) {
     // Setting the result to 0.
     double result = 0;
-    // The constant value of the exponent P in the Minkowski algorithm.
-    double P = 2.0;
     // Iterating over the indexes in each vector.
     for (int i = 0; i < v1.size(); i++) {
         // Calculating the subtraction between them in absolute value, raising to the power of 2 and adding to result.
-        result += pow(fabs(v1[i] - v2[i]), P);
+        result += pow(fabs(v1[i] - v2[i]), p);
     }
     // Returning the result to the power of p^-1.
-    return pow(result, 1.0 / P);
+    return pow(result, 1.0 / p);
 }
 
 /**
@@ -111,11 +95,14 @@ double Distances::minkowskiDistance(vector<double> v1, vector<double> v2) {
  * @param v2 the second vector.
  */
 void Distances::printAll(const vector<double> &d1, const vector<double> &d2) {
-    printf("%.08lf\n", euclideanDistance(d1, d2));
-    printf("%.01lf\n", taxicabDistance(d1, d2));
+    using namespace std;
+    cout << euclideanDistance(d1, d2) << endl;
+    cout << taxicabDistance(d1, d2) << endl;
+    printf("%f\n", euclideanDistance(d1, d2));
+    printf("%lf\n", taxicabDistance(d1, d2));
     printf("%.01lf\n", chebyshevDistance(d1, d2));
     printf("%.01lf\n", canberraDistance(d1, d2));
-    printf("%.08lf\n", minkowskiDistance(d1, d2));
+    printf("%.08lf\n", minkowskiDistance(d1, d2, 2));
 }
 
 /**

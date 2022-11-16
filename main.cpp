@@ -39,7 +39,7 @@ bool isNumber(string s) {
             }
             continue;
         }
-        // Checking if the chars are in valid negative format
+        // Checking if the chars are in valid negative format.
         if (s[i] == '-') {
             // If we have '-' we must get a space in the prev char, otherwise not in format.
             if (i == s.length() - 1 || (s[i] == '-' && s[i - 1] != ' ')) {
