@@ -7,6 +7,42 @@
 using namespace std;
 
 /**
+ * The function check if the input has negative sign that the user enters is in a valid format.
+ *
+ * @param string1 the user input string.
+ * @param i the for loop counter.
+ * @return return false if isn't valid and true if valid
+ * (we get the loop counter by reference because if valid we want to continue).
+ */
+bool validNegative(string string1, int &i) {
+    if (i == string1.length() - 1 || (string1[i] == '-' && string1[i - 1] != ' ')) {
+        return false;
+    }
+    // Want to get ahead in the for loop.
+    i++;
+    return true;
+}
+/**
+ * The function check if the input has '.' sign that the user enters is in a valid format(floating point format).
+ *
+ * @param string1 the user input string.
+ * @param i the for loop counter.
+ * @return return false if isn't valid and true if valid
+ * (we get the loop counter by reference because if valid we want to continue).
+ */
+bool validFloatingNumber(string string1, int &i) {
+    // If we have '.' we must get a number in the next char, otherwise not in format,
+    // And checking if not accessing out of scoping our array.
+    if ((i == string1.length() - 1) || (isdigit(string1[i + 1]) == false || isdigit(string1[i - 1]) == false)) {
+        return false;
+    }
+    // Want to get ahead in the for loop.
+    i++;
+    return true;
+}
+
+
+/**
  * Checking if the user input is in the right format.
  * @param s a string that the user entered.
  * @return boolean, True if the the string in the right format False otherwise.
@@ -28,24 +64,12 @@ bool isNumber(string s) {
             continue;
         }
         // Checking if the user input a valid floating point number.
-        if (s[i] == '.') {
-            // Checking if not accessing out of scoping our array.
-            if (i == s.length() - 1) {
-                return false;
-            }
-            // If we have '.' we must get a number in the next char, otherwise not in format.
-            if (isdigit(s[i + 1]) == false || isdigit(s[i - 1]) == false) {
-                return false;
-            }
-            continue;
+        if (s[i] == '.' && !validFloatingNumber(s, i)) {
+            return false;
         }
-        // Checking if the chars are in valid negative format.
-        if (s[i] == '-') {
-            // If we have '-' we must get a space in the prev char, otherwise not in format.
-            if (i == s.length() - 1 || (s[i] == '-' && s[i - 1] != ' ')) {
-                return false;
-            }
-            continue;
+        // Checking if the chars are in valid negative format
+        if (s[i] == '-' && !validNegative(s, i)) {
+            return false;
         }
         // Checking if the char is a digit.
         if (isdigit(s[i]) == false) {
@@ -91,7 +115,6 @@ void size_Comparison(const vector<double> &v1, const vector<double> &v2) {
         exit(0);
     }
 }
-
 
 /**
  * This is the main function of the program, creating 2 vectors and checking validation.
