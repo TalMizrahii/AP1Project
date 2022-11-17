@@ -22,6 +22,7 @@ bool validNegative(string string1, int &i) {
     i++;
     return true;
 }
+
 /**
  * The function check if the input has '.' sign that the user enters is in a valid format(floating point format).
  *

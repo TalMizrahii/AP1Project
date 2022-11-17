@@ -99,7 +99,7 @@ void printDistance(double result) {
     if (floor(result) == ceil(result)) {
         printf("%.1lf\n", result);
     } else {
-        printf("%.5lf\n", result);
+        printf("%lf\n", result);
     }
 }
 
