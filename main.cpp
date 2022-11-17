@@ -15,7 +15,10 @@ using namespace std;
  * (we get the loop counter by reference because if valid we want to continue).
  */
 bool validNegative(string string1, int &i) {
-    if (i == string1.length() - 1 || (string1[i] == '-' && string1[i - 1] != ' ')) {
+    // If the sign is not valid by format, reject.
+    if (i == string1.length() - 1
+        || (string1[i] == '-'
+            && string1[i - 1] != ' ')) {
         return false;
     }
     // Want to get ahead in the for loop.
@@ -34,16 +37,18 @@ bool validNegative(string string1, int &i) {
 bool validFloatingNumber(string string1, int &i) {
     // If we have '.' we must get a number in the next char, otherwise not in format,
     // And checking if not accessing out of scoping our array.
-    if ((i == string1.length() - 1) || (isdigit(string1[i + 1]) == false || isdigit(string1[i - 1]) == false)) {
+    if ((i == string1.length() - 1)
+        || (isdigit(string1[i + 1]) == false
+            || isdigit(string1[i - 1]) == false)) {
         return false;
     }
     // Checking if there are any chars in the floating point string that is not a digit.
-    for (int j = i + 1; j < string1.length() ; j++) {
+    for (int j = i + 1; j < string1.length(); j++) {
         // If we have space we the format is valid.
-        if (string1[j] == ' '){
+        if (string1[j] == ' ') {
             break;
-        // If after the point there any char that is not a digit return false (not a valid floating format).
-        }else if (isdigit(string1[j] ) == false){
+            // If after the point there any char that is not a digit return false (not a valid floating format).
+        } else if (isdigit(string1[j]) == false) {
             return false;
         }
     }
@@ -61,7 +66,8 @@ bool validFloatingNumber(string string1, int &i) {
 bool isNumber(string s) {
     int i = 0;
     // Check if the first or last char in the input is ' ' and if the first char is '-'.
-    if ((isdigit(s[i]) == false && s[i] != '-') || isdigit(s[s.length() - 1]) == false) {
+    if ((isdigit(s[i]) == false && s[i] != '-')
+        || isdigit(s[s.length() - 1]) == false) {
         return false;
     }
     // Check each char of the user input.
@@ -129,7 +135,6 @@ void size_Comparison(const vector<double> &v1, const vector<double> &v2) {
 
 /**
  * This is the main function of the program, creating 2 vectors and checking validation.
- *
  * @return return 0 if the program run without issues.
  */
 int main() {
