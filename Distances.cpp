@@ -91,17 +91,26 @@ double Distances::minkowskiDistance(vector<double> v1, vector<double> v2, double
     return pow(result, 1.0 / p);
 }
 
+void printDistance(double result) {
+    if (floor(result) == ceil(result)) {
+        printf("%.1lf\n", result);
+    } else {
+        printf("%.5lf\n", result);
+    }
+}
+
 /**
  * Printing all calculations between two vectors made by this class.
  * @param v1 the first vector.
  * @param v2 the second vector.
  */
 void Distances::printAll(const vector<double> &d1, const vector<double> &d2) {
-    printf("%f\n", euclideanDistance(d1, d2));
-    printf("%lf\n", taxicabDistance(d1, d2));
-    printf("%lf\n", chebyshevDistance(d1, d2));
-    printf("%lf\n", canberraDistance(d1, d2));
-    printf("%lf\n", minkowskiDistance(d1, d2, 2));
+    printDistance(euclideanDistance(d1, d2));
+    printDistance(taxicabDistance(d1, d2));
+    printDistance(chebyshevDistance(d1, d2));
+    printDistance(canberraDistance(d1, d2));
+    printDistance(minkowskiDistance(d1, d2, 2));
+
 }
 
 /**
