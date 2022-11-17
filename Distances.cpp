@@ -95,10 +95,12 @@ double Distances::minkowskiDistance(vector<double> v1, vector<double> v2, double
  * Printing a double representing a result of a distance calculation by the format requested.
  * @param result a result of a distance calculation.
  */
-void printDistance(double result) {
+void Distances::printDistance(double result) {
+    // If the floor of a double is equal to its ceiling, it's an integer.
     if (floor(result) == ceil(result)) {
         printf("%.1lf\n", result);
     } else {
+        // It's not an integer, so print it like a double.
         printf("%lf\n", result);
     }
 }
@@ -114,7 +116,6 @@ void Distances::printAll(const vector<double> &d1, const vector<double> &d2) {
     printDistance(chebyshevDistance(d1, d2));
     printDistance(canberraDistance(d1, d2));
     printDistance(minkowskiDistance(d1, d2, 2));
-
 }
 
 /**

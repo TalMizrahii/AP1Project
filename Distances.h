@@ -36,10 +36,11 @@ public:
     // Calculates the minkowski distance.
     double minkowskiDistance(vector<double> v1, vector<double> v2, double p);
 
+    // Printing all calculations by order.
     void printAll(const vector<double> &v1, const vector<double> &v2);
 
-
+    // Printing the result of a calculation by format.
+    void printDistance(double result);
 };
-
 
 #endif //AP1PROJECT_DISTANCES_H
