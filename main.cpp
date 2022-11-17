@@ -37,6 +37,16 @@ bool validFloatingNumber(string string1, int &i) {
     if ((i == string1.length() - 1) || (isdigit(string1[i + 1]) == false || isdigit(string1[i - 1]) == false)) {
         return false;
     }
+    // Checking if there are any chars in the floating point string that is not a digit.
+    for (int j = i + 1; j < string1.length() ; j++) {
+        // If we have space we the format is valid.
+        if (string1[j] == ' '){
+            break;
+        // If after the point there any char that is not a digit return false (not a valid floating format).
+        }else if (isdigit(string1[j] ) == false){
+            return false;
+        }
+    }
     // Want to get ahead in the for loop.
     i++;
     return true;
