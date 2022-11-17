@@ -91,6 +91,10 @@ double Distances::minkowskiDistance(vector<double> v1, vector<double> v2, double
     return pow(result, 1.0 / p);
 }
 
+/**
+ * Printing a double representing a result of a distance calculation by the format requested.
+ * @param result a result of a distance calculation.
+ */
 void printDistance(double result) {
     if (floor(result) == ceil(result)) {
         printf("%.1lf\n", result);
