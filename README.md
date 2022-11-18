@@ -49,7 +49,7 @@ $ git clone https://github.com/TalMizrahii/AP1Project
 # Go into the repository.
 $ cd AP1Project
 
-# Run using makefile.
+# Compile using makefile.
 $ make
 
 # Run the program.
