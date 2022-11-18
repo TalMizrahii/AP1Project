@@ -52,8 +52,11 @@ $ cd AP1Project
 # Compile using makefile.
 $ make
 
-# Run the program.
+# Run the program on Linux:
 $ ./a.out
+
+# Run the program on Windows:
+$ a.out
 
 ```
 
