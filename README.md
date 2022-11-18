@@ -38,17 +38,23 @@ The Distances are:
 * The program tested for linux machines.
 * Compiled with g++.
 
-### Installing
+### Installing And Executing
 
-* How/where to download your program
-* Any modifications needed to be made to files/folders
+To clone and run this application, you'll need [Git](https://git-scm.com) installed on your computer. From your command line:
 
-### Executing program
+```bash
+# Clone this repository.
+$ git clone https://github.com/TalMizrahii/AP1Project
 
-* How to run the program
-* Step-by-step bullets
-```
-code blocks for commands
+# Go into the repository.
+$ cd AP1Project
+
+# Run using makefile.
+$ make
+
+# Run the program.
+$ ./a.out
+
 ```
 
 ## Authors
@@ -56,23 +62,3 @@ code blocks for commands
 * [@Tal Mizrahi](https://github.com/TalMizrahii)
 
 
-## Version History
-
-* 0.2
-    * Various bug fixes and optimizations
-    * See [commit change]() or See [release history]()
-* 0.1
-    * Initial Release
-
-## License
-
-This project is licensed under the [NAME HERE] License - see the LICENSE.md file for details
-
-## Acknowledgments
-
-Inspiration, code snippets, etc.
-* [awesome-readme](https://github.com/matiassingers/awesome-readme)
-* [PurpleBooth](https://gist.github.com/PurpleBooth/109311bb0361f32d87a2)
-* [dbader](https://github.com/dbader/readme-template)
-* [zenorocha](https://gist.github.com/zenorocha/4526327)
-* [fvcproductions](https://gist.github.com/fvcproductions/1bfc2d4aecb01a834b46)
