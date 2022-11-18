@@ -3,6 +3,7 @@
 #include <iostream>
 #include <sstream>
 #include "Distances.h"
+#include <cstdlib>
 
 using namespace std;
 
