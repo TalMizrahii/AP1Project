@@ -51,19 +51,10 @@ The Distances are:
 code blocks for commands
 ```
 
-## Help
-
-Any advise for common problems or issues.
-```
-command to run if program contains helper info
-```
-
 ## Authors
+* [@Yuval Arbel](https://github.com/YuvalArbel1)
+* [@Tal Mizrahi](https://github.com/TalMizrahii)
 
-Contributors names and contact info
-
-ex. Dominique Pizzie  
-ex. [@DomPizzie](https://twitter.com/dompizzie)
 
 ## Version History
 
