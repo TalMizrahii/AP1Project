@@ -32,6 +32,13 @@ The Distances are:
 
 ![image](https://user-images.githubusercontent.com/103560553/202404050-595c6cba-1b98-42ba-868c-c2c28586d6e4.png)
 
+## Implementation
+The input to the program is received by the user from the keyboard. After that, the input is passed to a validation check, which accept:
+
+* Only doubles or integers.
+* Negative or positive numbers.
+* The vectors must be equally sized.
+* No special characters allowed.
 
 ## Dependencies
 
