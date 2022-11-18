@@ -1,2 +1,0 @@
-Distances.o: Distances.cpp Distances.h
-main.o: main.cpp Distances.h
