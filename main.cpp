@@ -14,7 +14,7 @@ using namespace std;
  * @return return false if isn't valid and true if valid
  * (we get the loop counter by reference because if valid we want to continue).
  */
-bool validNegative(string string1, int &i) {
+bool validNegative(string string1, unsigned long &i) {
     // If the sign is not valid by format, reject.
     if (i == string1.length() - 1
         || (string1[i] == '-'
@@ -34,7 +34,7 @@ bool validNegative(string string1, int &i) {
  * @return return false if isn't valid and true if valid
  * (we get the loop counter by reference because if valid we want to continue).
  */
-bool validFloatingNumber(string string1, int &i) {
+bool validFloatingNumber(string string1, unsigned long &i) {
     // If we have '.' we must get a number in the next char, otherwise not in format,
     // And checking if not accessing out of scoping our array.
     if ((i == string1.length() - 1)
@@ -43,7 +43,7 @@ bool validFloatingNumber(string string1, int &i) {
         return false;
     }
     // Checking if there are any chars in the floating point string that is not a digit.
-    for (int j = i + 1; j < string1.length(); j++) {
+    for (unsigned long j = i + 1; j < string1.length(); j++) {
         // If we have space we the format is valid.
         if (string1[j] == ' ') {
             break;
@@ -64,7 +64,7 @@ bool validFloatingNumber(string string1, int &i) {
  * @return boolean, True if the the string in the right format False otherwise.
  */
 bool isNumber(string s) {
-    int i = 0;
+    unsigned long i = 0;
     // Check if the first or last char in the input is ' ' and if the first char is '-'.
     if ((isdigit(s[i]) == false && s[i] != '-')
         || isdigit(s[s.length() - 1]) == false) {

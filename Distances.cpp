@@ -38,7 +38,7 @@ double Distances::chebyshevDistance(vector<double> v1, vector<double> v2) {
     double max = fabs(v1[0] - v2[0]);
     double temp;
     // Iterating over the indexes in each vector.
-    for (int i = 1; i < v1.size(); i++) {
+    for (unsigned long i = 1; i < v1.size(); i++) {
         // Setting the temp to be the value of distance between v1[i] to v2[i].
         temp = fabs(v1[0] - v2[0]);
         // If temp is bigger than max, max is now temp.
@@ -59,7 +59,7 @@ double Distances::canberraDistance(vector<double> v1, vector<double> v2) {
     // Setting the result to 0.
     double result = 0;
     // Iterating over the indexes in each vector.
-    for (int i = 0; i < v1.size(); i++) {
+    for (unsigned long i = 0; i < v1.size(); i++) {
         // Avoiding division by 0.
         if (v1[i] == 0 && v2[i] == 0) {
             continue;
@@ -83,7 +83,7 @@ double Distances::minkowskiDistance(vector<double> v1, vector<double> v2, double
     // Setting the result to 0.
     double result = 0;
     // Iterating over the indexes in each vector.
-    for (int i = 0; i < v1.size(); i++) {
+    for (unsigned long i = 0; i < v1.size(); i++) {
         // Calculating the subtraction between them in absolute value, raising to the power of 2 and adding to result.
         result += pow(fabs(v1[i] - v2[i]), p);
     }
