@@ -33,12 +33,12 @@ The Distances are:
 ![image](https://user-images.githubusercontent.com/103560553/202404050-595c6cba-1b98-42ba-868c-c2c28586d6e4.png)
 
 
-### Dependencies
+## Dependencies
 
 * The program tested for linux machines.
 * Compiled with g++.
 
-### Installing And Executing
+## Installing And Executing
 
 To clone and run this application, you'll need [Git](https://git-scm.com) installed on your computer. From your command line:
 
