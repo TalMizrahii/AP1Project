@@ -1,16 +1,11 @@
-appname := ex1
+a.out: main.o Distances.o
+	g++ -std=c++11 -o a.out main.o Distances.o 
 
-CXX := g++
-CXXFLAGS := -Wall -g
+main.o: main.cpp
+	g++ -std=c++11 -c main.cpp
 
-srcfiles := $(shell find . -maxdepth 1 -name "*.cpp")
-objects  := $(patsubst %.cpp, %.o, $(srcfiles))
-
-all: $(appname)
-
-$(appname): $(objects)
-	$(CXX) $(CXXFLAGS) $(LDFLAGS) -o $(appname) $(objects) $(LDLIBS)
+Distances.o: Distances.cpp
+	g++ -std=c++11 -c Distances.cpp
 
 clean:
-	rm -f $(objects) main.o Distances.o
-
+	rm -f *.o main.o Distances.o a.out
