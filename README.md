@@ -40,6 +40,14 @@ The input to the program is received by the user from the keyboard. After that, 
 * The vectors must be equally sized.
 * No special characters allowed.
 
+For example, (0, -1.1, 2) and (1, 2, 3) is a valid input, but (a, 3, 4) and (1., .1, 5, 3) is not (not equally sized and contain illegal characters).
+
+Additionally, two out of the five distance function uses the Minkowski distance, because:
+* taxicabDistance = minkowskiDistance(P = 1)
+* euclideanDistance = minkowskiDistance(P = 2)
+
+The Distances class contains all calculations regard to the algorithms, in addition to the print function, which presents the result of each calculation according to the order specified above.
+
 ## Dependencies
 
 * The program tested for linux machines.
