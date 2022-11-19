@@ -61,6 +61,8 @@ Additionally, two out of the five distance function uses the Minkowski distance,
 * taxicabDistance = minkowskiDistance(P = 1)
 * euclideanDistance = minkowskiDistance(P = 2)
 
+We used the minkowskiDistance to receive P=2.
+
 The Distances class contains all calculations regard to the algorithms, in addition to the print function, which presents the result of each calculation according to the order specified above.
 
 ## Dependencies
