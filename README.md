@@ -84,6 +84,7 @@ $ cd AP1Project
 # Compile using makefile.
 $ make
 ```
+
 ```bash
 # Run the program on Linux:
 $ ./a.out
@@ -92,7 +93,11 @@ $ ./a.out
 ```bash
 # Run the program on Windows:
 $ a.out
+```
 
+```bash
+# After running, clean all unnecessary files.
+$ make clean
 ```
 
 ## Authors
