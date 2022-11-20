@@ -1,6 +1,21 @@
-# AP1Project
+<h1 align="center">
+  <br>
+  <a href="https://github.com/TalMizrahii/AP1Project"><img src="https://img.icons8.com/color/344/c-plus-plus-logo.png" alt="C++" width="200"></a>
+  <br>
+  Advanced-Programming-1
+  <br>
+</h1>
 
-The first excersise in AP1 course, Bar Ilan university.
+<h4 align="center">This github repository is for the assignments given in Advanced Programming 1 course, Bar Ilan University.
+
+
+<p align="center">
+  <a href="#description">Description</a> •
+  <a href="#implementation">Implementation</a> •
+  <a href="#dependencies">Dependencies</a> •
+  <a href="#installing-and-executing">Installing And Executing</a> •
+  <a href="#authors">Authors</a> 
+</p>
 
 ## Description
 
@@ -46,6 +61,8 @@ Additionally, two out of the five distance function uses the Minkowski distance,
 * taxicabDistance = minkowskiDistance(P = 1)
 * euclideanDistance = minkowskiDistance(P = 2)
 
+We used the minkowskiDistance to receive P=2.
+
 The Distances class contains all calculations regard to the algorithms, in addition to the print function, which presents the result of each calculation according to the order specified above.
 
 ## Dependencies
@@ -66,10 +83,13 @@ $ cd AP1Project
 
 # Compile using makefile.
 $ make
-
+```
+```bash
 # Run the program on Linux:
 $ ./a.out
+```
 
+```bash
 # Run the program on Windows:
 $ a.out
 
