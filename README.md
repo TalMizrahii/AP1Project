@@ -57,6 +57,8 @@ The input to the program is received by the user from the keyboard. After that, 
 
 For example, (0, -1.1, 2) and (1, 2, 3) is a valid input, but (a, 3, 4) and (1., .1, 5, 3) is not (not equally sized and contain illegal characters).
 
+$$Yuval$$
+
 Additionally, two out of the five distance function uses the Minkowski distance, because:
 * taxicabDistance = minkowskiDistance(P = 1)
 * euclideanDistance = minkowskiDistance(P = 2)
