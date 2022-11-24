@@ -58,7 +58,6 @@ The input to the program is received by the user from the keyboard. After that, 
 For example, (0, -1.1, 2) and (1, 2, 3) is a valid input, but (a, 3, 4) and (1., .1, 5, 3) is not (not equally sized and contain illegal characters).
 
 In the main.cpp file, we used the iostream libary to get the user input as a stream (string).
-  
   Then we passes the string a number of integrity checks, if the string does not pass the integrity checks, we print an eror massage and close the program.
 Assume we pass all test, them we use a function from the iostream libary to "push" the valid string into double vector. 
 
